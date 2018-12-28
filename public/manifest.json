@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Castor",
+  "name": "A simple screencast recorder experiment",
   "icons": [
     {
       "src": "favicon.ico",
