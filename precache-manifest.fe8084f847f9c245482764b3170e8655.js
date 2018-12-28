@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "8198ab2f2986d175e90d",
+    "revision": "9d213163a4c6c7e196b5",
     "url": "/castor/static/css/main.9ef6d07f.chunk.css"
   },
   {
-    "revision": "8198ab2f2986d175e90d",
-    "url": "/castor/static/js/main.8198ab2f.chunk.js"
+    "revision": "9d213163a4c6c7e196b5",
+    "url": "/castor/static/js/main.9d213163.chunk.js"
   },
   {
     "revision": "7bd0e600f240fb66ee67",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/castor/static/js/runtime~main.05b356e7.js"
   },
   {
-    "revision": "6a7633f0bc6e65638ca30f26af14d1e0",
+    "revision": "db17679e3c62cca99d5a835e63649069",
     "url": "/castor/index.html"
   }
 ];
