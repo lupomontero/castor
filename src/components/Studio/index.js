@@ -24,7 +24,7 @@ const styles = {
     padding: 20,
   },
   canvas: {
-    backgroundColor: '#666',
+    backgroundColor: '#000',
     maxWidth: '100%',
     maxHeight: '100vh',
   },
@@ -93,6 +93,56 @@ class Studio extends React.Component {
     console.log('componentWillUnmount');
   }
 
+  drawScreen(screen, canvas, ctx) {
+    const canvasAspectRatio = canvas.width / canvas.height;
+    const screenAspectRatio = screen.video.videoWidth / screen.video.videoHeight;
+    const [screenWidth, screenHeight, screenX, screenY] = (
+      (canvasAspectRatio > screenAspectRatio)
+        ? [
+          canvas.height * screenAspectRatio,
+          canvas.height,
+          (canvas.width - (canvas.height * screenAspectRatio)) / 2,
+          0,
+        ]
+        : [
+          canvas.width,
+          canvas.width * screenAspectRatio,
+          0,
+          (canvas.height - (canvas.width * screenAspectRatio)) / 2,
+        ]
+    );
+    ctx.drawImage(
+      screen.video,
+      screenX,
+      screenY,
+      screenWidth,
+      screenHeight,
+    );
+  }
+
+  drawCamera(camera, canvas, ctx) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(
+      (canvas.width - (camera.video.videoWidth / 4)) + 20,
+      (canvas.height - (camera.video.videoHeight / 4)) - 15,
+      camera.video.videoHeight / 4,
+      0,
+      2 * Math.PI,
+    );
+    ctx.closePath();
+    ctx.clip();
+
+    ctx.drawImage(
+      camera.video,
+      (canvas.width - (camera.video.videoWidth / 2)) + 20,
+      (canvas.height - (camera.video.videoHeight / 2)) - 15,
+      camera.video.videoWidth / 2,
+      camera.video.videoHeight / 2,
+    );
+    ctx.restore();
+  }
+
   update() {
     const { canvas, state } = this;
     const { audio, camera, screen } = state;
@@ -106,37 +156,11 @@ class Studio extends React.Component {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (screen && screen.video) {
-      // TODO: assuming screen.video and canvas have same aspect ratio!
-      ctx.drawImage(
-        screen.video,
-        0,
-        0,
-        canvas.width,
-        canvas.height,
-      );
+      this.drawScreen(screen, canvas, ctx);
     }
 
     if (camera && camera.video) {
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(
-        (canvas.width - (camera.video.videoWidth / 4)) + 20,
-        (canvas.height - (camera.video.videoHeight / 4)) - 15,
-        camera.video.videoHeight / 4,
-        0,
-        2 * Math.PI,
-      );
-      ctx.closePath();
-      ctx.clip();
-
-      ctx.drawImage(
-        camera.video,
-        (canvas.width - (camera.video.videoWidth / 2)) + 20,
-        (canvas.height - (camera.video.videoHeight / 2)) - 15,
-        camera.video.videoWidth / 2,
-        camera.video.videoHeight / 2,
-      );
-      ctx.restore();
+      this.drawCamera(camera, canvas, ctx);
     }
 
     if (audio) {
@@ -226,7 +250,6 @@ class Studio extends React.Component {
 
   render() {
     const { audio, camera, screen, resolution, isRecording, isPaused } = this.state;
-    console.log(resolution);
     return (
       <div style={styles.root}>
         <canvas
