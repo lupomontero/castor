@@ -1,13 +1,13 @@
 {
-  "main.css": "/castor/static/css/main.9ef6d07f.chunk.css",
-  "main.js": "/castor/static/js/main.9d213163.chunk.js",
-  "main.js.map": "/castor/static/js/main.9d213163.chunk.js.map",
-  "static/js/1.7bd0e600.chunk.js": "/castor/static/js/1.7bd0e600.chunk.js",
-  "static/js/1.7bd0e600.chunk.js.map": "/castor/static/js/1.7bd0e600.chunk.js.map",
-  "runtime~main.js": "/castor/static/js/runtime~main.05b356e7.js",
-  "runtime~main.js.map": "/castor/static/js/runtime~main.05b356e7.js.map",
-  "static/css/main.9ef6d07f.chunk.css.map": "/castor/static/css/main.9ef6d07f.chunk.css.map",
+  "main.css": "/castor/static/css/main.41080655.chunk.css",
+  "main.js": "/castor/static/js/main.02f9d1e3.chunk.js",
+  "main.js.map": "/castor/static/js/main.02f9d1e3.chunk.js.map",
+  "runtime~main.js": "/castor/static/js/runtime~main.6190c768.js",
+  "runtime~main.js.map": "/castor/static/js/runtime~main.6190c768.js.map",
+  "static/js/2.69b12326.chunk.js": "/castor/static/js/2.69b12326.chunk.js",
+  "static/js/2.69b12326.chunk.js.map": "/castor/static/js/2.69b12326.chunk.js.map",
   "index.html": "/castor/index.html",
-  "precache-manifest.fe8084f847f9c245482764b3170e8655.js": "/castor/precache-manifest.fe8084f847f9c245482764b3170e8655.js",
-  "service-worker.js": "/castor/service-worker.js"
+  "precache-manifest.6aed7f15cc84cbffc5d424939f1e557b.js": "/castor/precache-manifest.6aed7f15cc84cbffc5d424939f1e557b.js",
+  "service-worker.js": "/castor/service-worker.js",
+  "static/css/main.41080655.chunk.css.map": "/castor/static/css/main.41080655.chunk.css.map"
 }
